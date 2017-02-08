@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Recspecs.Models.Division>
+
+<html>
+<head>
+    <title>Divisions</title>
+</head>
+<body>
+    <h2>Divisions in The RecSpec League</h2>
+   
+    <ul>
+        @foreach (var division in Model)
+        {
+            <li>
+                <a href="/Divisions/Details/@division.DivisionId">@Html.DisplayFor(modelDivisions => division.DivisionName)</a> | @Html.ActionLink("Edit", "Edit", new { id = division.DivisionId }) | @Html.ActionLink("Delete", "Delete", new { id = division.DivisionId })
+            </li>
+        }
+    </ul>
+    @Html.ActionLink("Create New Division", "Create")
+</body>
+</html>

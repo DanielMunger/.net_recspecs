@@ -1,0 +1,10 @@
+﻿@model Recspecs.Models.Division
+
+<h2>Are you sure you want to delete this?</h2>
+<hr />
+@Html.DisplayNameFor(model => model.DivisionName): @Html.DisplayFor(model => model.DivisionName)
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete" />
+}
+<p>@Html.ActionLink("Back to list", "Index")</p>

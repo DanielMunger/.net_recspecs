@@ -1,0 +1,37 @@
+﻿@model Recspecs.Models.Team
+
+<html>
+<head>
+    <title>@Model.TeamName - Edit</title>
+</head>
+<body>
+    <h2>Edit</h2>
+    <hr />
+    <h4>Edit this task: @Html.DisplayFor(model => model.TeamName)</h4>
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.TeamId)
+
+        @Html.LabelFor(model => model.TeamName)
+        @Html.EditorFor(model => model.TeamName)
+        <br>
+        @Html.LabelFor(model => model.TeamCaptain)
+        @Html.EditorFor(model => model.TeamCaptain)
+        <br>
+        <br>
+        @Html.LabelFor(model => model.Wins)
+        @Html.EditorFor(model => model.Wins)
+        <br>
+        @Html.LabelFor(model => model.Losses)
+        @Html.EditorFor(model => model.Losses)
+        <br>
+        @Html.LabelFor(model => model.DivisionId)
+        @Html.DropDownList("DivisionId")
+
+        <input type="submit" value="Save">
+    }
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿@model Recspecs.Models.Division
+
+<html>
+<head>
+    <title>@Model.DivisionName - Edit</title>
+</head>
+<body>
+    <h2>Edit</h2>
+    <hr />
+    <h4>Edit this Division: @Html.DisplayFor(model => model.DivisionName)</h4>
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.DivisionId)
+
+        @Html.LabelFor(model => model.DivisionName)
+        @Html.EditorFor(model => model.DivisionName)
+        <br>
+        @Html.LabelFor(model => model.MaxTeams)
+        @Html.EditorFor(model => model.MaxTeams)
+        <br>
+        <br>
+        @Html.LabelFor(model => model.SkillLevel)
+        @Html.EditorFor(model => model.SkillLevel)
+        <br>
+        <input type="submit" value="Save">
+    }
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+
+</body>
+</html>

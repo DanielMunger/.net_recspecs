@@ -1,0 +1,21 @@
+﻿@model Recspecs.Models.Division
+
+<html>
+<head>
+    <title>Divisions:Create</title>
+</head>
+<body>
+    <h2>Create a new Division</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(model => model.DivisionName)<span>: </span> 
+        @Html.TextBoxFor(model => model.DivisionName)<br />
+        @Html.LabelFor(model => model.SkillLevel)<span>: </span>
+        @Html.TextBoxFor(model => model.SkillLevel)<br />
+        @Html.LabelFor(model => model.MaxTeams)<span>: </span>
+        @Html.TextBoxFor(model => model.MaxTeams, new {type="number", min="0", max="100"})<br />
+        <input type="submit" value="Add new division" />
+    }
+    <p>@Html.ActionLink("Back to Division List", "Index")</p>
+</body>
+</html>

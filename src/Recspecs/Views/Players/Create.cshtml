@@ -1,0 +1,25 @@
+﻿@model Recspecs.Models.Player
+
+<html>
+<head>
+    <title>Player - Create</title>
+</head>
+<body>
+    <h2>Create</h2>
+    <hr />
+    <h4>Add a new player</h4>
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(model => model.PlayerName)<span>: </span>
+        @Html.TextBoxFor(model => model.PlayerName)
+        <br>
+        @Html.LabelFor(model => model.IsGood)<span>: </span>
+        @Html.CheckBoxFor(model => model.IsGood)
+        <br />
+        @Html.LabelFor(model => model.TeamId)
+        @Html.DropDownList("TeamId")
+        <input type="submit" value="Add new player" />
+    }
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+</body>
+</html>

@@ -1,0 +1,13 @@
+﻿@model Recspecs.Models.Player
+
+<html>
+<head>
+    <title>@Model.PlayerName - Details</title>
+</head>
+<body>
+    <h2>Details</h2>
+    <hr />
+    @Html.DisplayNameFor(model => model.PlayerName): @Html.DisplayFor(model => model.PlayerName) <span>plays for: </span> @Html.DisplayFor(model => model.Team.TeamName)
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+</body>
+</html>

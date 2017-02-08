@@ -1,0 +1,31 @@
+﻿@model Recspecs.Models.Team
+
+<html>
+<head>
+    <title>@Model.TeamName - Details</title>
+</head>
+<body>
+    <h2>Details</h2>
+    <hr />
+    @Html.DisplayNameFor(model => model.TeamName): @Html.DisplayFor(model => model.TeamName)
+    <p>Plays in: @Html.DisplayFor(model => model.Division.DivisionName)</p>
+    <p>Team Roster:</p>
+    <ul>
+    @foreach(var player in Model.Players)
+    {
+        <li>
+            @player.PlayerName
+            @if (!player.IsGood)
+            {
+                <span> (sucks)</span>
+            }
+            else
+            {
+                <span> (is good)</span>
+            }
+        </li>
+    }
+    </ul>
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+</body>
+</html>

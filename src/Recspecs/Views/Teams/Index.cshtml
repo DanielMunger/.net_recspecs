@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Recspecs.Models.Team>
+
+<html>
+<head>
+    <title>Teams</title>
+</head>
+<body>
+    <h2>Team List</h2>
+    <h4>@Html.DisplayNameFor(model => model.TeamName)</h4>
+    <h4>@Html.DisplayNameFor(model => model.Division.DivisionName)</h4>
+    <ul>
+        @foreach(var team in Model)
+        {
+           <li>
+               <a href="/Teams/Details/@team.TeamId">@Html.DisplayFor(modelTeam => team.TeamName)</a> | @Html.ActionLink("Edit", "Edit", new { id = team.TeamId }) | @Html.ActionLink("Delete", "Delete", new { id = team.TeamId })
+            </li>
+        }
+    </ul>
+    @Html.ActionLink("Create New Team", "Create")
+</body>
+</html>

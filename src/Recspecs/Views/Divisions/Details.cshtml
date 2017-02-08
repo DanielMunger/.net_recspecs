@@ -1,0 +1,22 @@
+﻿@model Recspecs.Models.Division
+
+<html>
+<head>
+    <title>@Model.DivisionName</title>
+</head>
+<body>
+    <h1>Divisions</h1>
+    <h3>@Model.DivisionName</h3>
+    <h4>Maximum Teams: @Model.MaxTeams</h4>
+    <h4>Skill Level: @Model.SkillLevel</h4><hr />
+    <h4>Teams:</h4>
+    <ul>
+    @foreach(var team in Model.Teams)
+    {
+        <li><a href="/Teams/Details/@team.TeamId">@team.TeamName</a></li>
+
+    }
+
+    </ul>
+</body>
+</html>
